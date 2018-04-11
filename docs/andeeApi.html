@@ -1,0 +1,488 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Annikken Andee API Reference · Annikken Andee Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Annikken Andee API Reference · Annikken Andee Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://annikken.github.io/index.html"/><meta property="og:description" content="# Annikken Andee Library"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/ann_logo40pt.png" alt="Annikken Andee Documentation"/><h2 class="headerTitle">Annikken Andee Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Annikken Andee API Reference</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="annikken-andee-library"></a><a href="#annikken-andee-library" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Annikken Andee Library</h1>
+<p>These are all the functions that can be found in the Andee Library</p>
+<h2><a class="anchor" aria-hidden="true" id="andee-functions-andeefunc"></a><a href="#andee-functions-andeefunc" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Andee functions {#andeefunc}</h2>
+<p>The <code>Andee</code> Class has general functions that affects the way the Andee Shield works or what it does.</p>
+<h3><a class="anchor" aria-hidden="true" id="begin-begin"></a><a href="#begin-begin" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Begin {#begin}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">begin</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function is required to be called before calling any other <code>Andee</code> functions. This will setup the SPI communication on the Arduino Shield. The Slave Select pin will default to pin 8.</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">begin</span><span class="hljs-params">(pin)</span>
+</span></code></pre>
+<p>If the <code>Andee</code> Slave Select pin conflicts with another shield, you can use argument <code>pin</code> to change the <code>Andee</code> Slave Select pin.</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.begin();
+Andee.begin(<span class="hljs-number">5</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="change-andee-name-changename"></a><a href="#change-andee-name-changename" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Change Andee Name {#changename}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(name)</span>
+</span></code></pre>
+<p>This function will change the name of the Andee Shield. This name will appear when scanning for your Andee Shield in the app. Only works on Firmware 2.00 and above.
+<code>name</code> is a <code>Character Array</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.setName(<span class="hljs-string">"My New Name"</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="clear-all-widgets-clearall"></a><a href="#clear-all-widgets-clearall" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clear All Widgets {#clearall}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function will clear all the widgets on the screen in the iOS/Android app</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.clear();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="disconnect-disconnect"></a><a href="#disconnect-disconnect" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Disconnect {#disconnect}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">disconnect</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function will force the Andee Shield to disconnect from the iOS/Android device that it is connected to</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.disconnect();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="check-connection-checkconn"></a><a href="#check-connection-checkconn" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Check Connection {#checkconn}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">int</span> <span class="hljs-title">isConnected</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function checks if the Andee Shield is connected to a device and returns an Integer.
+If the value returned is :<br/>
+<code>0</code>, the Andee Shield is not connected to a device<br/>
+<code>1</code>, the Andee Shield is connected to a device</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">connected = Andee.isConnected();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-device-time-getdevtime"></a><a href="#get-device-time-getdevtime" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Device Time {#getdevtime}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getDeviceTime</span><span class="hljs-params">(*hour,*min,*sec)</span>
+</span></code></pre>
+<p>This function will get the time from the device that it is connected to.
+The time from the device will be stored in the <code>hour</code>,<code>min</code> and <code>sec</code> arguments in <code>Integer</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.getDeviceTime(&amp;hour,&amp;min,&amp;sec);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-device-date-getdevdate"></a><a href="#get-device-date-getdevdate" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Device Date {#getdevdate}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getDeviceDate</span><span class="hljs-params">(*day,*month,*year)</span>
+</span></code></pre>
+<p>This function will get the date from the device that it is connected to.
+The date from the device will be stored in the <code>day</code>, <code>month</code> and <code>year</code> arguments in <code>Integer</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.getDeviceDate(&amp;day,&amp;month,&amp;year)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-timestamp-timestamp"></a><a href="#get-timestamp-timestamp" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Timestamp {#timestamp}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">long</span> <span class="hljs-title">getDeviceTimeStamp</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function will get and return the timestamp in millis from the device that it is connected to.
+The return value will be a <code>Long</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">timeStamp = Andee.getDeviceTimeStamp();
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="using-device-features-devicefeature"></a><a href="#using-device-features-devicefeature" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Device Features {#devicefeature}</h2>
+<p>The functions below makes use of the functions on the smart device. If the device does not have a particular feature, for example not all smartphones have a gyroscope, then the function will not work</p>
+<h3><a class="anchor" aria-hidden="true" id="vibrate-device-vibrate"></a><a href="#vibrate-device-vibrate" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vibrate Device {#vibrate}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">vibrate</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function will cause the connected device to vibrate for approximately 1 second</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.vibrate();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="gyroscope-sensor-gyro"></a><a href="#gyroscope-sensor-gyro" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gyroscope Sensor {#gyro}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">gyroInit</span><span class="hljs-params">(interval,iteration)</span>
+</span></code></pre>
+<p>This function will activate the gyroscope sensor on the device. The function can only be called once, unless the arguments are changed. The iOS/Android device will restart the interval timer each time this function is called.<br/>
+<code>interval</code>, is an <code>Integer</code>, will set the time interval in ms before sending another gyro data.<br/>
+<code>iteration</code>, is an <code>Integer</code>, will set the amount of times the gyro data should be sent.
+Set <code>iteration</code> to <code>-1</code> for infinite iterations<br/></p>
+<p>Once the initialisation has been called, call the function below to get the gyroscope values.</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getGyroReading</span><span class="hljs-params">(*xAxis,*yAxis,*zAxis)</span>
+</span></code></pre>
+<p>The values from the gyroscope sensor will be stored in the <code>xAxis</code>,<code>yAxis</code> and <code>zAxis</code> arguments in <code>Float</code><br/></p>
+<p>The readings can be stopped anytime by calling</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">gyroStop</span><span class="hljs-params">()</span>
+</span></code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.gyroInit(<span class="hljs-number">200</span>,<span class="hljs-number">-1</span>);<span class="hljs-comment">//App will send data unlimited times at 200ms interval</span>
+
+Andee.getGyroReading(&amp;xAxis,&amp;yAxis,&amp;zAxis);
+
+Andee.gyroStop();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="linear-accelerometer-sensor-lac"></a><a href="#linear-accelerometer-sensor-lac" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linear Accelerometer Sensor {#lac}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">lacInit</span><span class="hljs-params">(interval,iteration)</span>
+</span></code></pre>
+<p>This function will activate the Linear Accelerometer(LAC) sensor on the device. The function can only be called once, unless the arguments are changed. The iOS/Android device will restart the interval timer each time this function is called.<br/></p>
+<p><code>interval</code>, is an <code>Integer</code>, and will set the time interval in ms before sending another LAC data.<br/>
+<code>iteration</code>, is an <code>Integer</code>, and will set the amount of times the LAC data should be sent.
+Set <code>iteration</code> to <code>-1</code> for infinite iterations<br/></p>
+<p>Once the initialisation has been called, call the function below to get the LAC values.</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getLacReading</span><span class="hljs-params">(*xAxis,*yAxis,*zAxis)</span>
+</span></code></pre>
+<p>The values from the LAC sensor will be stored in the <code>xAxis</code>,<code>yAxis</code> and <code>zAxis</code> arguments in <code>Float</code><br/></p>
+<p>The readings can be stopped anytime by calling</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">lacStop</span><span class="hljs-params">()</span>
+</span></code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.lacInit(<span class="hljs-number">200</span>,<span class="hljs-number">-1</span>);<span class="hljs-comment">//App will send data unlimited times at 200ms interval</span>
+
+Andee.getLacReading(&amp;xAxis,&amp;yAxis,&amp;zAxis);
+
+Andee.lacStop();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="gravity-sensor-grav"></a><a href="#gravity-sensor-grav" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gravity Sensor {#grav}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">gravInit</span><span class="hljs-params">(interval,iteration)</span>
+</span></code></pre>
+<p>This function will activate the gravity sensor on the device. The function can only be called once, unless the arguments are changed. The iOS/Android device will restart the interval timer each time this function is called.<br/></p>
+<p><code>interval</code>, is an <code>Integer</code>, will set the time interval in ms before sending another gravity data.<br/>
+<code>iteration</code>, is an <code>Integer</code>, will set the amount of times the gravity data should be sent.
+Set <code>iteration</code> to <code>-1</code> for infinite iterations<br/></p>
+<p>Once the initialisation has been called, call the function below to get the gravity values.</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getGravReading</span><span class="hljs-params">(*xAxis,*yAxis,*zAxis)</span>
+</span></code></pre>
+<p>The values from the gravity sensor will be stored in the <code>xAxis</code>,<code>yAxis</code> and <code>zAxis</code> arguments in <code>Float</code><br/></p>
+<p>The readings can be stopped anytime by calling</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">gravStop</span><span class="hljs-params">()</span>
+</span></code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.gravInit(<span class="hljs-number">200</span>,<span class="hljs-number">-1</span>);<span class="hljs-comment">//App will send data unlimited times at 200ms interval</span>
+
+Andee.getGravReading(&amp;xAxis,&amp;yAxis,&amp;zAxis);
+
+Andee.gravStop();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="gps-sensor-gps"></a><a href="#gps-sensor-gps" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GPS Sensor {#gps}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">gpsInit</span><span class="hljs-params">(interval,iteration)</span>
+</span></code></pre>
+<p>This function will activate the GPS sensor on the device. The function can only be called once, unless the arguments are changed. The iOS/Android device will restart the interval timer each time this function is called.<br/></p>
+<p><code>interval</code>, is an <code>Integer</code>, will set the time interval in ms before sending another GPS data.<br/>
+<code>iteration</code>, is an <code>Integer</code>, will set the amount of times the GPS data should be sent.
+Set <code>iteration</code> to <code>-1</code> for infinite iterations<br/></p>
+<p>Once the initialisation has been called, call the function below to get the GPS values.</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getGpsReading</span><span class="hljs-params">(*xAxis,*yAxis)</span>
+</span></code></pre>
+<p>The values from the GPS sensor will be stored in the <code>xAxis</code> and <code>yAxis</code> arguments in <code>Float</code><br/>
+The readings can be stopped anytime by calling</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">gpsStop</span><span class="hljs-params">()</span>
+</span></code></pre>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.gpsInit(<span class="hljs-number">200</span>,<span class="hljs-number">-1</span>);<span class="hljs-comment">//App will send data unlimited times at 200ms interval</span>
+
+Andee.getGpsReading(&amp;xAxis,&amp;yAxis);
+
+Andee.gpsStop();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="sms-sms"></a><a href="#sms-sms" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SMS {#sms}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">sendSMS</span><span class="hljs-params">(phone_number, message)</span>
+</span></code></pre>
+<p>This function will send an SMS through the connected device. <br/>
+<code>phone_number</code>, is a <code>Character Array</code>, will be the recipient's phone number<br/>
+<code>message</code>, is a <code>Character Array</code>, will be the content of the SMS</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.sendSMS(<span class="hljs-number">98452618</span>, <span class="hljs-string">"Hello from my Andee"</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="taking-photos-photo"></a><a href="#taking-photos-photo" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Taking Photos {#photo}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">takePhoto</span><span class="hljs-params">(cameraType,autoFocus,flash)</span>
+</span></code></pre>
+<p>This function will make the connected device take 1 photo depending on the arguments below<br/>
+For <code>cameraType</code> use either</p>
+<ul>
+<li><code>CAM_DEFAULT</code> to use default camera</li>
+<li><code>FRONT</code> to use Front Camera</li>
+<li><code>BACK</code> to use Rear Camera <br/>
+For<code>autoFocus</code> use</li>
+<li><code>ON</code> to switch on auto focus</li>
+<li><code>OFF</code> to switch off auto focus <br/>
+For <code>flash</code> use</li>
+<li><code>ON</code> to switch on flash</li>
+<li><code>OFF</code> to switch off flash</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.takePhoto(BACK,ON,ON);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="text-to-speech-textspeech"></a><a href="#text-to-speech-textspeech" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Text to Speech {#textspeech}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">textToSpeech</span><span class="hljs-params">(speech,speed,pitch,accent)</span>
+</span></code></pre>
+<p>This function will activate the text to speech(TTS) function on the device. The app will then speak the text in the speech string. The arguments are<br/>
+<code>speech</code>, is a <code>Character Array</code>, that the device will speak<br/>
+<code>speed</code>, is a <code>Float</code>, is the speed of the speech<br/>
+<code>pitch</code>, is a <code>Float</code>, is the pitch of the voice<br/>
+<code>accent</code> of the voice. Use <br/></p>
+<ul>
+<li><code>US</code></li>
+<li><code>GREAT_BRITON</code></li>
+<li><code>AUSTRALIA</code></li>
+<li><code>IRELAND</code></li>
+<li><code>SOUTH_AFRICA</code><br/>
+Android devices require installation of the required language pack to use different accents.</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.textToSpeech(<span class="hljs-string">"This is Annikken Andee"</span>,<span class="hljs-number">1.0</span>,<span class="hljs-number">0.5</span>,US);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="notification-notification"></a><a href="#notification-notification" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Notification {#notification}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">notification</span><span class="hljs-params">(title,message,ticker)</span>
+</span></code></pre>
+<p>This function will pop a notification on the connected device. This only works on <strong>Android devices</strong>. The arguments are<br/>
+<code>title</code>, is a <code>Character Array</code>, is the title of the notification<br/>
+<code>message</code>, is a <code>Character Array</code>, is the main text of the notification<br/>
+<code>ticker</code>, is a <code>Character Array</code>, is the small text when the notification has not been expanded yet</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">Andee.notification(<span class="hljs-string">"Andee Notify"</span>,<span class="hljs-string">"Just some text for the body of the SMS"</span>,<span class="hljs-string">"Andee"</span>);
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="andeehelper-functions-helperfunc"></a><a href="#andeehelper-functions-helperfunc" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AndeeHelper Functions {#helperfunc}</h2>
+<p>The <code>AndeeHelper</code> Class has functions that help the user create the widgets on the app. A new instantiation of the class has to be made for each widget. For example,</p>
+<pre><code class="hljs css cpp">AndeeHelper widget1;<span class="hljs-comment">//1 instantiation</span>
+AndeeHelper widget2;<span class="hljs-comment">//Another instantiation</span>
+
+widget1.setId(<span class="hljs-number">5</span>);<span class="hljs-comment">//when using one of the functions below</span>
+</code></pre>
+<p>You can then use the functions below with each instantiation. Every example from here onwards will use widget1 as the example.</p>
+<h3><a class="anchor" aria-hidden="true" id="set-id-setid"></a><a href="#set-id-setid" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Id {#setid}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(id)</span>
+</span></code></pre>
+<p>Set widget id
+<code>id</code>, is a <code>char</code>, can be a number from 0 to 49</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setId(<span class="hljs-number">49</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-type-settype"></a><a href="#set-type-settype" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Type {#settype}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setType</span><span class="hljs-params">(type)</span>
+</span></code></pre>
+<p><code>type</code> uses macros as the input. Available types are<br/></p>
+<ul>
+<li>DATA_OUT</li>
+<li>DATA_OUT_CIRCLE</li>
+<li>DATA_OUT_HEADER</li>
+<li>BUTTON_IN</li>
+<li>CIRCLE_BUTTON</li>
+<li>ANALOG_DIAL_OUT</li>
+<li>KEYBOARD_IN</li>
+<li>DATE_IN</li>
+<li>TIME_IN</li>
+<li>SLIDER_IN</li>
+<li>TEXTBOX</li>
+<li>TTS</li>
+<li>JOYSTICK</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setType(DATA_OUT);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-location-setlocat"></a><a href="#set-location-setlocat" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Location {#setlocat}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setLocation</span><span class="hljs-params">(row,column,span)</span>
+</span></code></pre>
+<p><code>row</code>, is a <code>char</code>, can be a number from 0 to 3<br/>
+<code>column</code>, is a <code>char</code>, can be a number from 0 to 3<br/>
+<code>span</code> uses macros as the input. Available macros are<br/>
+ONE_THIRD, TWO_THIRD, ONE_QUART, THREE_QUART, HALF, FULL</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setLocation(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,ONE_THIRD);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-coordinates-setcoord"></a><a href="#set-coordinates-setcoord" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Coordinates {#setcoord}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setCoord</span><span class="hljs-params">(xCoordinate,yCoordinate,width,height)</span>
+</span></code></pre>
+<p><code>xCoordinate</code>, is an <code>Integer</code>, can be a number from 0 to 100<br/>
+<code>yCoordinate</code>, is an <code>Integer</code>, can be a number from 0 to 100<br/>
+<code>width</code>, is an <code>Integer</code>, can be a number from 0 to 100<br/>
+<code>height</code>, is an <code>Integer</code>, can be a number from 0 to 100</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setCoord(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">25</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-color-setcolor"></a><a href="#set-color-setcolor" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Color {#setcolor}</h3>
+<p>The widget has a few colors that can be customised. The widget body, widget body text, widget title and widget title text.</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setColor</span><span class="hljs-params">(color)</span>
+</span></code></pre>
+<p>This is to set widget body color<br/></p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setTextColor</span><span class="hljs-params">(color)</span>
+</span></code></pre>
+<p>This is to set widget body text color<br/></p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setTitleColor</span><span class="hljs-params">(color)</span>
+</span></code></pre>
+<p>This is to set widget title color<br/></p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setTitleTextColor</span><span class="hljs-params">(color)</span>
+</span></code></pre>
+<p>This is to set widget title text color<br/></p>
+<p><code>color</code> is a <code>Character Array</code>. <code>color</code> should be a color hex in the form of AARRGGBB, where A is alpha, R is red, g is green and B is blue. For example, &quot;FFFF0000&quot; is red. There are also macros that can be used. All the possible macros will be listed <a href="/docs/assets/Andee_Color.md">here</a>.<br/></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setColor(WHITE);
+widget1.setTextColor(RED);
+widget1.setTitleColor(DARK_RED);
+widget1.setTitleTextColor(WHITE);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-data-setdata"></a><a href="#set-data-setdata" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Data {#setdata}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setData</span><span class="hljs-params">(data)</span>
+class <span class="hljs-keyword">void</span> <span class="hljs-title">setData</span><span class="hljs-params">(dataFloat,decimalPlace)</span>
+</span></code></pre>
+<p>This function sets the widget data display.<br/>
+<code>data</code> can accept an <code>Integer</code>and a <code>Character Array</code><br/>
+<code>dataFloat</code> accepts a <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setData(<span class="hljs-number">345</span>);
+<span class="hljs-keyword">or</span>
+widget1.setData(<span class="hljs-string">"Info Here"</span>);
+<span class="hljs-keyword">or</span>
+widget1.setData(<span class="hljs-number">1.345</span>,<span class="hljs-number">3</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-title-settitle"></a><a href="#set-title-settitle" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Title {#settitle}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setTitle</span><span class="hljs-params">(title)</span>
+class <span class="hljs-keyword">void</span> <span class="hljs-title">setTitle</span><span class="hljs-params">(titleFloat,decimalPlace)</span>
+</span></code></pre>
+<p>This function sets the widget title display.<br/>
+<code>title</code> can accept an <code>Integer</code>and a <code>Character Array</code>. <br/>
+<code>titleFloat</code> accepts a <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setTitle(<span class="hljs-number">345</span>);
+<span class="hljs-keyword">or</span>
+widget1.setTitle(<span class="hljs-string">"Header Here"</span>);
+<span class="hljs-keyword">or</span>
+widget1.setTitle(<span class="hljs-number">1.345</span>,<span class="hljs-number">3</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-units-setunit"></a><a href="#set-units-setunit" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Units {#setunit}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setUnit</span><span class="hljs-params">(units)</span>
+class <span class="hljs-keyword">void</span> <span class="hljs-title">setUnit</span><span class="hljs-params">(unitFloat,decimalPlace)</span>
+</span></code></pre>
+<p>This function sets the widget units display.<br/>
+<code>units</code> can accept an <code>Integer</code>and a <code>Character Array</code>. <br/>
+<code>unitFloat</code> accepts a <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setUnit(<span class="hljs-number">345</span>);
+<span class="hljs-keyword">or</span>
+widget1.setUnit(<span class="hljs-string">"Extra Info Here"</span>);
+<span class="hljs-keyword">or</span>
+widget1.setUnit(<span class="hljs-number">1.345</span>,<span class="hljs-number">3</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="update-widget-update"></a><a href="#update-widget-update" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update Widget {#update}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function is very important to the Annikken Andee. If this function is not called, the widget will not appear. This function can be called at specific parts of the sketch to control the way the widget is updated.</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.update();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="remove-widget-remove"></a><a href="#remove-widget-remove" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Remove Widget {#remove}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function tells the connected device to remove the corresponding widget when called.</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.remove();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-min-max-setminmax"></a><a href="#set-min-max-setminmax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Min Max {#setminmax}</h3>
+<p><strong>Note:</strong>This function is only for <code>Slider</code> and <code>Analog Circle</code> Widgets</p>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setMinMax</span><span class="hljs-params">(min,max)</span>
+class <span class="hljs-keyword">void</span> <span class="hljs-title">setMinMax</span><span class="hljs-params">(minFloat,maxFloat,decimalPlace)</span>
+</span></code></pre>
+<p>This function sets the minimum and maximum value for the <code>Slider</code> and <code>Analog Circle</code> widgets.<br/>
+<code>min</code> and <code>max</code> are <code>Integer</code>. <br/>
+<code>minFloat</code> and <code>maxFloat</code> are <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget.setMinMax(<span class="hljs-number">0</span>,<span class="hljs-number">50</span>)
+<span class="hljs-keyword">or</span>
+widget1.setMinMax(<span class="hljs-number">0.00</span>,<span class="hljs-number">50.00</span>,<span class="hljs-number">2</span>);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="input-widget-functions-inputwidget"></a><a href="#input-widget-functions-inputwidget" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Input Widget Functions {#inputwidget}</h2>
+<h6><a class="anchor" aria-hidden="true" id="the-functions-below-are-only-needed-if-the-slider-button-circle-button-date-time-and-keyboard-widgets-are-used"></a><a href="#the-functions-below-are-only-needed-if-the-slider-button-circle-button-date-time-and-keyboard-widgets-are-used" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The functions below are only needed if the <code>Slider</code>,<code>Button</code>,<code>Circle Button</code>,<code>Date</code>,<code>Time</code> and <code>Keyboard</code> widgets are used</h6>
+<h3><a class="anchor" aria-hidden="true" id="set-input-mode-setinput"></a><a href="#set-input-mode-setinput" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Input Mode {#setinput}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setInputMode</span><span class="hljs-params">(mode)</span>
+</span></code></pre>
+<p><code>mode</code> uses macros as the input. Available macros are: <br/>
+For <code>BUTTON_IN</code> and <code>CIRCLE_BUTTON</code>, use <code>ACK</code> for acknowledged button presses or <code>NO_ACK</code> for a multi press button.<br/></p>
+<p>For <code>SLIDER_IN</code>, use <code>ON_FINGER_UP</code> for a slider that updates the value upon lifting the finger from the screen,<code>ON_VALUE_CHANGE</code> for a slider that updates the value as soon as the values change or <code>NO_FINGER</code> for a slider that looks like a progress bar,with no interaction needed<br/></p>
+<p>For <code>KEYBOARD_IN</code>, use <code>ALPHA_NUMERIC</code> for AlphaNumeric Keyboard, <code>ALPHA_NUMERIC_PW</code> for AlphaNumeric keyboard that hides the typed character after a few seconds, <code>NUMERIC</code> for a Numeric Keyboard with symbols or <code>NUMERIC_PW</code> for a Numeric Keyboard that hides typed characters after a few seconds<br/></p>
+<p>Both <code>Date</code> and <code>Time</code> only have 1 input mode</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setType(BUTTON_IN);
+widget1.setInputMode(ACK);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="slider-widget-specific-functions-sliderfunc"></a><a href="#slider-widget-specific-functions-sliderfunc" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Slider Widget Specific Functions {#sliderfunc}</h2>
+<h6><a class="anchor" aria-hidden="true" id="the-next-3-functions-are-only-used-for-slider-widgets"></a><a href="#the-next-3-functions-are-only-used-for-slider-widgets" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The next 3 functions are only used for slider widgets</h6>
+<h3><a class="anchor" aria-hidden="true" id="move-slider-thumb-moveslider"></a><a href="#move-slider-thumb-moveslider" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Move Slider Thumb {#moveslider}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">moveSliderToValue</span><span class="hljs-params">(value)</span>
+class <span class="hljs-keyword">void</span> <span class="hljs-title">moveSliderToValue</span><span class="hljs-params">(valueFloat,decimalPlace)</span>
+</span></code></pre>
+<p>This function moves the slider thumb to the position as defined in the argument <code>value</code> or <code>valueFloat</code><br/>
+<code>value</code> is an integer. <br/>
+<code>valueFloat</code> is a <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.moveSliderToValue(<span class="hljs-number">50</span>);
+<span class="hljs-keyword">or</span>
+widget1.moveSliderToValue(<span class="hljs-number">34.4</span>,<span class="hljs-number">1</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="set-the-number-of-intervals-for-slider-numinterval"></a><a href="#set-the-number-of-intervals-for-slider-numinterval" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set the Number of Intervals for Slider {#numinterval}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setSliderNumIntervals</span><span class="hljs-params">(value)</span>
+</span></code></pre>
+<p>This function sets the number of intervals (or number of steps) the slider widget has.
+<code>value</code> is an <code>Integer</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setSliderNumIntervals(<span class="hljs-number">100</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-slider-value-getslider"></a><a href="#get-slider-value-getslider" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Slider Value {#getslider}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">int</span> <span class="hljs-title">getSliderValue</span><span class="hljs-params">()</span>
+class <span class="hljs-keyword">float</span> <span class="hljs-title">getSliderValue</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function is to get the value of the slider from the app. The function will return an <code>Integer</code> or a <code>Float</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">sliderValue = widget1.getSliderValue();
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="button-widget-specific-functions-butfunc"></a><a href="#button-widget-specific-functions-butfunc" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Button Widget Specific Functions {#butfunc}</h2>
+<h5><a class="anchor" aria-hidden="true" id="the-widgets-button-circle-button-date-and-time-widgets-use-the-functions-below"></a><a href="#the-widgets-button-circle-button-date-and-time-widgets-use-the-functions-below" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The widgets <code>Button</code>,<code>Circle Button</code>,<code>Date</code> and <code>Time</code> widgets use the functions below</h5>
+<h3><a class="anchor" aria-hidden="true" id="ispressed-ispress"></a><a href="#ispressed-ispress" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>isPressed {#ispress}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">int</span> <span class="hljs-title">isPressed</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function is used to check if a button widget has been pressed. This function returns the number of times the button has been pressed and a <code>0</code> if the button is not pressed</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp"><span class="hljs-keyword">if</span>(widget1.isPressed() &gt; <span class="hljs-number">0</span>)
+{
+...........................
+}
+<span class="hljs-keyword">or</span>
+<span class="hljs-keyword">int</span> buttonPressed = widget1.isPressed();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="acknowledgement-ack"></a><a href="#acknowledgement-ack" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Acknowledgement {#ack}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">ack</span><span class="hljs-params">()</span>
+</span></code></pre>
+<p>This function will send an acknowledgement packet to the connected device. This is required when the input mode of the button widget has been set to acknowledgement</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.ack();
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="keyboard-widget-specific-functions-keyfunc"></a><a href="#keyboard-widget-specific-functions-keyfunc" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keyboard Widget Specific Functions {#keyfunc}</h2>
+<h3><a class="anchor" aria-hidden="true" id="get-keyboard-message-getkeyboard"></a><a href="#get-keyboard-message-getkeyboard" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Keyboard Message {#getkeyboard}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getKeyboardMessage</span><span class="hljs-params">(*appReply)</span>
+</span></code></pre>
+<p>This function is to get the reply when the Keyboard Widget is used. The function will store the reply in the <code>appReply</code> as a <code>Character Array</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.getKeyboardMessage(&amp;getReply);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="date-widget-specific-functions-datefunc"></a><a href="#date-widget-specific-functions-datefunc" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Date Widget Specific Functions {#datefunc}</h2>
+<h3><a class="anchor" aria-hidden="true" id="set-default-date-setdate"></a><a href="#set-default-date-setdate" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Default Date {#setdate}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setDefaultDate</span><span class="hljs-params">(day, month, year)</span>
+</span></code></pre>
+<p>This function sets the default day when the date widget is used. When the user taps on the widget, a calendar is presented and the cursor will highlight the default day.<br/>
+Both <code>day</code> and <code>year</code> are <code>Integer</code> while <code>month</code> can accept <code>Integer</code> and months in macro. The available macros are <br/></p>
+<ul>
+<li><code>Jan</code></li>
+<li><code>Feb</code></li>
+<li><code>Mar</code></li>
+<li><code>Apr</code></li>
+<li><code>May</code></li>
+<li><code>Jun</code></li>
+<li><code>Jul</code></li>
+<li><code>Aug</code></li>
+<li><code>Sep</code></li>
+<li><code>Oct</code></li>
+<li><code>Nov</code></li>
+<li><code>Dec</code></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setDefaultDate(<span class="hljs-number">07</span>,Feb,<span class="hljs-number">2016</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-date-getdate"></a><a href="#get-date-getdate" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Date {#getdate}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getDateInput</span><span class="hljs-params">(*day,*month,*year)</span>
+</span></code></pre>
+<p>This function is used to get the date input from the Date widget. The values will be stored accordingly into <code>day</code>,<code>month</code> and <code>year</code></p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.getDateInput(&amp;day,&amp;month,&amp;year);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="time-widget-specific-functions-timefunc"></a><a href="#time-widget-specific-functions-timefunc" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Time Widget Specific Functions {#timefunc}</h2>
+<h3><a class="anchor" aria-hidden="true" id="set-default-time-settime"></a><a href="#set-default-time-settime" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Default Time {#settime}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">setDefaultTime</span><span class="hljs-params">(hour,minute,second)</span>
+</span></code></pre>
+<p>This function sets the default time when the Time widget is used. When the user taps on the widget, a pop up on the app will show the default time.</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css cpp">widget1.setDefaultTime(<span class="hljs-number">05</span>,<span class="hljs-number">30</span>,<span class="hljs-number">00</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-time-gettime"></a><a href="#get-time-gettime" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Time {#gettime}</h3>
+<pre><code class="hljs css cpp"><span class="hljs-function">class <span class="hljs-keyword">void</span> <span class="hljs-title">getTimeInput</span><span class="hljs-params">(hour,minute,second)</span>
+</span></code></pre>
+<p>This function is used to get the time input from the Time widget. The values will be stored accordingly into <code>hour</code>,<code>minute</code>,<code>second</code></p>
+<pre><code class="hljs css cpp">widget1.getTimeInput(&amp;hour,&amp;minute,&amp;second);
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/ann_logo40pt.png" alt="Annikken Andee Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Andee iOS/Android/U</a><a href="/docs/en/doc2.html">Andee101</a><a href="/docs/en/doc3.html">Andee for micro:bit</a></div><div><h5>Need Help? Contact us at andee@annikken.com</h5><a href="https://github.com/Annikken">GitHub</a></div></section><a href="https://annikken.com" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/ann_logo.png" alt="Facebook Open Source" width="152" height="152"/></a><section class="copyright">Copyright © 2018Annikken</section></footer></div></body></html>

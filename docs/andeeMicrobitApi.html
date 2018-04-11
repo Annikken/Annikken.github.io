@@ -1,0 +1,279 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Andee micro:bit API Reference · Annikken Andee Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Andee micro:bit API Reference · Annikken Andee Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://annikken.github.io/index.html"/><meta property="og:description" content="# Andee PXT Package For Makecode"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/ann_logo40pt.png" alt="Annikken Andee Documentation"/><h2 class="headerTitle">Annikken Andee Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Andee micro:bit API Reference</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="andee-pxt-package-for-makecode"></a><a href="#andee-pxt-package-for-makecode" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Andee PXT Package For Makecode</h1>
+<p>All blocks found in the PXT package can be found here. The blocks will be separated from basic and advanced blocks.</p>
+<p>The package uses a namespace called Andee and has a class called widget. Creating a widget requires instantiating the class. However this only applies to users who use the javascript tab.</p>
+<h2><a class="anchor" aria-hidden="true" id="basic-blocks-basic"></a><a href="#basic-blocks-basic" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Blocks {#basic}</h2>
+<p>These blocks are in the first page of the Andee package. Thses functions are needed to create the widgets.</p>
+<h3><a class="anchor" aria-hidden="true" id="begin-begin"></a><a href="#begin-begin" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Begin {#begin}</h3>
+<p><img src="/assets/andee-microbit/andeebegin.png" alt=""></p>
+<pre><code class="hljs css js">Andee.begin()
+</code></pre>
+<p>This block is required on start to enable the use of the Andee widgets</p>
+<h3><a class="anchor" aria-hidden="true" id="create-widget-create"></a><a href="#create-widget-create" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Widget {#create}</h3>
+<p><img src="/assets/andee-microbit/createwidget2.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-keyword">let</span> widget1 = Andee.createWidget(id,type,position,length,color,title,data,units)
+</code></pre>
+<p>This function creates a new widget to display on the Andee app. Due to the limited memory in the microbit, only 5 widgets can be created at a time.</p>
+<p>The arguments require the use of several enumerators when using the javascript function. Use the arguments below to make the widget</p>
+<p><code>id</code> uses an enumerator <code>WidgetId</code>.</p>
+<pre><code class="hljs css js">enum WidgetId {
+Widget_1, Widget_2, Widget_3, Widget_4, Widget_5
+}
+</code></pre>
+<p><code>type</code> uses an enumerator <code>WidgetType</code></p>
+<pre><code class="hljs css js">enum WidgetType {
+Databox, Databox_Circle, Databox_Header, Button, Button_Circle, Keyboard_In
+}
+</code></pre>
+<p><code>position</code> uses an enumerator <code>WidgetPosition</code></p>
+<pre><code class="hljs css js">enum WidgetPosition {
+Row0_Column0, Row0_Column1, Row0_Column2, Row0_Column3,
+
+Row1_Column0, Row1_Column1, Row1_Column2, Row1_Column3,
+
+Row2_Column0, Row2_Column1, Row2_Column2, Row2_Column3,
+
+Row3_Column0, Row3_Column1, Row3_Column2, Row3_Column3
+}
+</code></pre>
+<p>Each row and column represents the smartdevice screen. For example, if the user wants the widget to be at the top right corner of the screen, use <code>WidgetPosition.Row0_Column3</code></p>
+<p><code>length</code> uses an enumerator <code>WidgetLength</code></p>
+<pre><code class="hljs css js">enum WidgetLength {
+One_Quarter, Half, Full
+}
+</code></pre>
+<ul>
+<li><code>Quarter</code> is approximately 1 quarter of the length of the screen</li>
+<li><code>Half</code> is approximately 1 half of the length of the screen</li>
+<li><code>Full</code> is approximately 1 length of the screen</li>
+</ul>
+<p><code>color</code> uses an enumerator <code>WidgetColor</code></p>
+<pre><code class="hljs css js">enum WidgetColour {
+Red, Dark_Red, Orange, Dark_Orange,
+Yellow, Dark_Yellow, Green, Dark_Green,
+Blue, Dark_Blue, Indigo, Dark_Magenta,
+Magenta, Violet
+}
+</code></pre>
+<p><code>title</code>,<code>data</code> and <code>units</code> only accept a <code>String</code>. If not needed, these 3 arguments can be left empty.</p>
+<h3><a class="anchor" aria-hidden="true" id="create-slider-analog-circle-widget-create2"></a><a href="#create-slider-analog-circle-widget-create2" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Slider/Analog Circle Widget {#create2}</h3>
+<p><img src="/assets/andee-microbit/createslider2.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-keyword">let</span> widget1 = Andee.createSliderWidget(id,type,position,length,color,title,data,units)
+</code></pre>
+<p>This function creates a new slider or analog circle widget to display on the Andee app. Due to the limited memory in the microbit, only 5 widgets can be created at a time.</p>
+<p>The arguments require the use of several enumerators when using the javascript function. Use the arguments below to make the widget</p>
+<p><code>id</code> uses an enumerator <code>WidgetId</code>.</p>
+<pre><code class="hljs css js">enum WidgetId {
+Widget_1, Widget_2, Widget_3, Widget_4, Widget_5
+}
+</code></pre>
+<p><code>type</code> uses an enumerator <code>WidgetType</code></p>
+<pre><code class="hljs css js">enum WidgetTypeInput {
+Slider, Analog_Dial
+}
+</code></pre>
+<p><code>position</code> uses an enumerator <code>WidgetPosition</code></p>
+<pre><code class="hljs css js">enum WidgetPosition {
+Row0_Column0, Row0_Column1, Row0_Column2, Row0_Column3,
+
+Row1_Column0, Row1_Column1, Row1_Column2, Row1_Column3,
+
+Row2_Column0, Row2_Column1, Row2_Column2, Row2_Column3,
+
+Row3_Column0, Row3_Column1, Row3_Column2, Row3_Column3
+}
+</code></pre>
+<p>Each row and column represents the smartdevice screen. For example, if the user wants the widget to be at the top right corner of the screen, use <code>WidgetPosition.Row0_Column3</code></p>
+<p><code>length</code> uses an enumerator <code>WidgetLength</code></p>
+<pre><code class="hljs css js">enum WidgetLength {
+One_Quarter, Half, Full
+}
+</code></pre>
+<ul>
+<li><code>Quarter</code> is approximately 1 quarter of the length of the screen</li>
+<li><code>Half</code> is approximately 1 half of the length of the screen</li>
+<li><code>Full</code> is approximately 1 length of the screen</li>
+</ul>
+<p><code>color</code> uses an enumerator <code>WidgetColor</code></p>
+<pre><code class="hljs css js">enum WidgetColour {
+Red, Dark_Red, Orange, Dark_Orange,
+Yellow, Dark_Yellow, Green, Dark_Green,
+Blue, Dark_Blue, Indigo, Dark_Magenta,
+Magenta, Violet
+}
+</code></pre>
+<p><code>title</code>,<code>data</code> and <code>units</code> only accept a <code>String</code>. If not needed, these 3 arguments can be left empty.</p>
+<h3><a class="anchor" aria-hidden="true" id="update-widget-update"></a><a href="#update-widget-update" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update Widget {#update}</h3>
+<p><img src="/assets/andee-microbit/updatewidget.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">update</span>()
+</span></code></pre>
+<p>This function will make the widget appear on the screen of the connected device. This function has to be called each time a widget property is changed to reflect the new change</p>
+<h3><a class="anchor" aria-hidden="true" id="remove-widget-remove"></a><a href="#remove-widget-remove" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Remove Widget {#remove}</h3>
+<p><img src="/assets/andee-microbit/removewidget.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">remove</span>()
+</span></code></pre>
+<p>This function removes the widget from the screen of the connected device</p>
+<h3><a class="anchor" aria-hidden="true" id="clear-screen-clear"></a><a href="#clear-screen-clear" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clear Screen {#clear}</h3>
+<p><img src="/assets/andee-microbit/clearwidgets.png" alt=""></p>
+<pre><code class="hljs css js">Andee.clear()
+</code></pre>
+<p>This function clears the screen of the Andee app, removing all widgets on it</p>
+<h3><a class="anchor" aria-hidden="true" id="get-keyboard-reply-getkbd"></a><a href="#get-keyboard-reply-getkbd" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Keyboard Reply {#getkbd}</h3>
+<p><img src="/assets/andee-microbit/getkeybreply.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-keyword">let</span> replyString = Andee.getKeyboard()
+</code></pre>
+<p>This function returns the string that the user inputs in the keyboard widget on the Andee app. This function should be used in the widget event</p>
+<h3><a class="anchor" aria-hidden="true" id="get-slider-value-getsld"></a><a href="#get-slider-value-getsld" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Slider Value {#getsld}</h3>
+<p><img src="/assets/andee-microbit/getslidervalue.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-keyword">let</span> replyNum = Andee.getSlider()
+</code></pre>
+<p>This function returns the value of the slider widget on the Andee app. This function should be used in the widget event</p>
+<h3><a class="anchor" aria-hidden="true" id="widget-events-event"></a><a href="#widget-events-event" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Widget Events {#event}</h3>
+<p><img src="/assets/andee-microbit/andeeevent.png" alt=""></p>
+<pre><code class="hljs css js">Andee.WidgetEvent(widgetId,actions)
+</code></pre>
+<p>This function creates an event for input based widgets like buttons,sliders and keyboard widget.
+<code>widgetId</code> uses an enumerator <code>WidgetId</code></p>
+<ul>
+<li>Widget_1</li>
+<li>Widget_2</li>
+<li>Widget_3</li>
+<li>Widget_4</li>
+<li>Widget_5</li>
+</ul>
+<p>Place the functions to be called in <code>actions</code> which will be done when the event is fired.</p>
+<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<pre><code class="hljs css js">Andee.WidgetEvent(WidgetId.Widget_1, () =&gt; {
+<span class="hljs-keyword">let</span> reply = Andee.getKeyboard()<span class="hljs-comment">//reply will store the string from the widget and can now be used</span>
+})
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="convert-number-to-string-convert"></a><a href="#convert-number-to-string-convert" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Convert Number to String {#convert}</h3>
+<p><img src="/assets/andee-microbit/converttostring.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-keyword">let</span> sendString = Andee.convertNumberToString(value)
+</code></pre>
+<p>This function converts a number and returns a string. <br/>
+<code>value</code> is a <code>Number</code></p>
+<h2><a class="anchor" aria-hidden="true" id="advanced-blocks-advance"></a><a href="#advanced-blocks-advance" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Advanced Blocks {#advance}</h2>
+<p>These blocks are in the second page of the Andee package. Not all the blocks here are needed to create widgets. Most of the bloacks are to change certain properties of the widget. This will be helpful when the user needs to change the colour of a widget during runtime for example.<br/> <strong>Note:</strong> Make sure to always call update() for a widget after changing its properties or else the changes will not show in the app</p>
+<h3><a class="anchor" aria-hidden="true" id="set-title-settitle"></a><a href="#set-title-settitle" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Title {#settitle}</h3>
+<p><img src="/assets/andee-microbit/settitle.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setTitle</span>(<span class="hljs-title">title</span>)
+</span></code></pre>
+<p>This function changes the title of the widget.<br/>
+<code>title</code> is a <code>String</code></p>
+<h3><a class="anchor" aria-hidden="true" id="set-data-setdata"></a><a href="#set-data-setdata" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Data {#setdata}</h3>
+<p><img src="/assets/andee-microbit/setdata.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setData</span>(<span class="hljs-title">data</span>)
+</span></code></pre>
+<p>This function changes the data of the widget.<br/>
+<code>data</code> is a <code>String</code></p>
+<h3><a class="anchor" aria-hidden="true" id="set-units-setunit"></a><a href="#set-units-setunit" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Units {#setunit}</h3>
+<p><img src="/assets/andee-microbit/setunits.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setUnit</span>(<span class="hljs-title">units</span>)
+</span></code></pre>
+<p>This function changes the units of the widget.<br/>
+<code>units</code> is a <code>String</code></p>
+<h3><a class="anchor" aria-hidden="true" id="set-button-mode-setbtnmode"></a><a href="#set-button-mode-setbtnmode" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Button Mode {#setbtnmode}</h3>
+<p><img src="/assets/andee-microbit/setbuttonmode.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setButtonInputMode</span>(<span class="hljs-title">buttonMode</span>)
+</span></code></pre>
+<p>This function sets the button widget to 2 different modes.<br/>
+<code>buttonMode</code> accepts an enumerator <code>ButtonMode</code></p>
+<pre><code class="hljs css js">enum ButtonMode {
+Acknowledge, MultiPress
+}
+</code></pre>
+<ul>
+<li><code>Acknowledge</code> mode makes the button require an acknowledgement after a button press. User will need to send <code>ack()</code> to allow the button to be pressed again.</li>
+<li><code>MultiPress</code> is the default mode of the button widget. This allows the user to press the button as many times as possible</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="set-keyboard-mode-setkbdmode"></a><a href="#set-keyboard-mode-setkbdmode" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Keyboard Mode {#setkbdmode}</h3>
+<p><img src="/assets/andee-microbit/setkeybmode.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setKeyboardInputMode</span>(<span class="hljs-title">kbMode</span>)
+</span></code></pre>
+<p>This function sets the keyboard widget to one of the 4 possible modes<br/>
+<code>kbMode</code> accepts an enumerator <code>KeyboardMode</code></p>
+<pre><code class="hljs css js">enum KeyboardMode {
+AlphaNumeric, AlphaNumeric_PW, Numeric, Numeric_PW
+}
+</code></pre>
+<ul>
+<li><code>AlphaNumeric</code> is the default mode of the keyboard widget. This mode sets the keyboard on the widget to the AlphaNumeric keyboard</li>
+<li><code>AlphaNumeric_PW</code> mode sets the keyboard on the widget to AlphaNumeric and also hides the typed keys after a few seconds</li>
+<li><code>Numeric</code> mode sets the keyboard on the widget to the Numeric keyboard</li>
+<li><code>Numeric_PW</code> mode sets the keyboard on the widget to Numeric and also hides the typed keys after a few seconds</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="set-slider-mode-setsldmode"></a><a href="#set-slider-mode-setsldmode" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Slider Mode {#setsldmode}</h3>
+<p><img src="/assets/andee-microbit/setslidermode.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setSliderInputMode</span>(<span class="hljs-title">sliderMode</span>)
+</span></code></pre>
+<p>This function sets the slider widget to one of the 3 possible modes<br/>
+<code>sliderMode</code> accepts an enumerator <code>SliderMode</code></p>
+<pre><code class="hljs css js">enum SliderMode {
+On_Finger_Release, On_Value_Change, No_Thumb_Slider
+}
+</code></pre>
+<ul>
+<li><code>On_Finger_Release</code> is the default mode of the slider widget. This mode will send back the updated value of the slider when the user releases the slider thumb</li>
+<li><code>On_Value_Change</code> mode will send back the updated value of the slider every time the slider thumb moves</li>
+<li><code>No_Thumb_Slider</code> mode will remove the slider thumb so that the user can use the slider widget like a progress bar</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="set-x-coordinate-of-widget-setxcoord"></a><a href="#set-x-coordinate-of-widget-setxcoord" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set X Coordinate of Widget {#setxcoord}</h3>
+<p><img src="/assets/andee-microbit/setcoordx.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setCoordX</span>(<span class="hljs-title">xCoord</span>)
+</span></code></pre>
+<p>This function sets the X coordinate of the widget. This allows the user to finely tune the position of the widget.<br/>
+<code>xCoord</code> is a <code>Number</code><br/>
+<strong>Note:</strong> The widget's origin is at the top left hand corner so the length and width of the widget have to be calculated properly to prevent it from overlapping other widgets</p>
+<h3><a class="anchor" aria-hidden="true" id="set-y-coordinate-of-widget-setycoord"></a><a href="#set-y-coordinate-of-widget-setycoord" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Y Coordinate of Widget {#setycoord}</h3>
+<p><img src="/assets/andee-microbit/setcoordy.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setCoordY</span>(<span class="hljs-title">yCoord</span>)
+</span></code></pre>
+<p>This function sets the Y coordinate of the widget. This allows the user to finely tune the position of the widget.<br/>
+<code>yCoord</code> is a <code>Number</code><br/>
+<strong>Note:</strong> The widget's origin is at the top left hand corner so the length and width of the widget have to be calculated properly to prevent it from overlapping other widgets</p>
+<h3><a class="anchor" aria-hidden="true" id="set-widget-width-setwidth"></a><a href="#set-widget-width-setwidth" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Widget Width {#setwidth}</h3>
+<p><img src="/assets/andee-microbit/setwidth.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setWidth</span>(<span class="hljs-title">width</span>)
+</span></code></pre>
+<p>This function sets the width of the widget. <br/>
+<code>width</code> is a <code>Number</code>
+<strong>Note:</strong> Make sure to change the x and y coordinates of the widget if it overlaps another widget</p>
+<h3><a class="anchor" aria-hidden="true" id="set-widget-height-setheight"></a><a href="#set-widget-height-setheight" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Widget Height {#setheight}</h3>
+<p><img src="/assets/andee-microbit/setheight.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setHeight</span>(<span class="hljs-title">height</span>)
+</span></code></pre>
+<p>This function sets the height of the widget. <br/>
+<code>height</code> is a <code>Number</code>
+<strong>Note:</strong> Make sure to change the x and y coordinates of the widget if it overlaps another widget</p>
+<h3><a class="anchor" aria-hidden="true" id="set-widget-colour-setcolour"></a><a href="#set-widget-colour-setcolour" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set Widget Colour {#setcolour}</h3>
+<p><img src="/assets/andee-microbit/setColour.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">setColour</span>(<span class="hljs-title">color</span>)
+</span></code></pre>
+<p>This function changes the colour of the widget. Select from the available colours in the enumerator <code>WidgetColour</code></p>
+<pre><code class="hljs css js">enum WidgetColour {
+Red, Dark_Red,
+Orange, Dark_Orange,
+Yellow, Dark_Yellow,
+Green, Dark_Green,
+Blue, Dark_Blue,
+Indigo, Dark_Magenta,
+Magenta, Violet,
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="update-widget-after-x-loops-updateloop"></a><a href="#update-widget-after-x-loops-updateloop" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update Widget after X Loops {#updateloop}</h3>
+<p><img src="/assets/andee-microbit/updateloop.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">updateLoop</span>(<span class="hljs-title">loops</span>)
+</span></code></pre>
+<p>This function changes the amount of loops needed to lapse before sending the update BLE packet to the app. Constantly sending update packets to the connected device will slow down both the app and the microbit. Pausing the program is also inefficient due to blocking. Hence, by sending the update packets after some loops, the BLE is not overcrowded and the microbit can continue doing its other functions properly.<br/>
+<code>loops</code> is a <code>Number</code></p>
+<h3><a class="anchor" aria-hidden="true" id="send-acknowledgement-setack"></a><a href="#send-acknowledgement-setack" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Send Acknowledgement {#setack}</h3>
+<p><img src="/assets/andee-microbit/sendack.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ack</span>()
+</span></code></pre>
+<p>This function sends an acknowledgement to the Andee app when this function is called. Call this function when using a button widget that is in acknowledge mode. When the device receives this packet, ti will release the corresponding button so that the user can tap it again</p>
+<p>###Force a Widget to Update {#forceupd}
+<img src="/assets/andee-microbit/forceupdate.png" alt=""></p>
+<pre><code class="hljs css js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">forceUpdate</span>()
+</span></code></pre>
+<p>This function forces a widget to update when called. Useful when changes to a widget is made during runtime. Due to the nature of the widget updates, the widget might take several lops before updating. For the change to reflect on the app the fastest, call this function</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/ann_logo40pt.png" alt="Annikken Andee Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Andee iOS/Android/U</a><a href="/docs/en/doc2.html">Andee101</a><a href="/docs/en/doc3.html">Andee for micro:bit</a></div><div><h5>Need Help? Contact us at andee@annikken.com</h5><a href="https://github.com/Annikken">GitHub</a></div></section><a href="https://annikken.com" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/ann_logo.png" alt="Facebook Open Source" width="152" height="152"/></a><section class="copyright">Copyright © 2018Annikken</section></footer></div></body></html>
